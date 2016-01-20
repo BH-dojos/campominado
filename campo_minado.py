@@ -1,14 +1,12 @@
 def resolve_campo_minado(campo_minado):
-    if len(campo_minado[0]) == 2:
-        if campo_minado[0][0] == ".":
-            return ["00"]
+    linha = campo_minado[0]
+    solucao = ''
+    for casa in linha:
+        if casa == '*':
+            solucao += '*'
+        elif len(linha)>1 and linha[1] == '*' :
+            solucao += '1'
+        elif casa == '.':
+            solucao += '0'
 
-    if len(campo_minado[0]) == 3:
-        if campo_minado[0][0] == ".":
-            return ["000"]
-        else:
-            return["***"]
-
-    elif campo_minado == ['.']:
-        return ['0']
-    return campo_minado
+    return [solucao]
