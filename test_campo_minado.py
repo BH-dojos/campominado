@@ -18,3 +18,6 @@ def test_linha_sem_mina_retorna_zeros():
 
 def test_linha_com_mina_retorna_mina():
     assert resolve_campo_minado(["***"]) == ["***"]
+
+def test_linha_com_duas_minas_retorna_campo():
+    assert resolve_campo_minado(["*.*"]) == ["*2*"]
